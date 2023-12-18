@@ -19,5 +19,5 @@ jobs:
 
 workflows:
   tesappio-release:
-      job:
+      jobs:
         - build-and-upload
