@@ -1,0 +1,20 @@
+version: 2.1
+
+orbs:
+  android: circleci/android@1.0.3
+
+jobs:
+  build-and-upload:
+    executor:
+      name: android/android-machine
+    environment:
+      release_notes: "Release of the Sample app"
+      notify: true
+    steps:
+      # Checkout the code as the first step.
+      - checkout
+      - run:
+          name: Assemble debug build
+          command: ./gradlew assembleDebug
+
+workflows:
