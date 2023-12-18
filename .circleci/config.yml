@@ -26,6 +26,10 @@ jobs:
       - run:
           name: Assemble debug build
           command: ./gradlew assembleDebug
+          # Conditionner la livraison sur TestApp.io avec des test unitaire
+      - run:
+            name: Run Unit tests
+            command: ./gradlew test
       - run:
           name: Upload app to Testapp.io
           command: |
